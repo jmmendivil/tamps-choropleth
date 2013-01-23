@@ -6,7 +6,7 @@
 </head>
 <style>
 	html,body{ margin:0; padding:0;}
-	#map-municipios { 
+	#mapa { 
 		margin:	20px;
 		padding: 15px;
 		width:	260px;
@@ -15,11 +15,11 @@
 	}
 </style>
 <body>
-	<object data="svg/municipios.svg" id="map-municipios" type="image/svg+xml"></object>
-	<script src="js/choropleth.js"></script>
+	<object data="svg/tamps-municipios.svg" id="mapa" type="image/svg+xml"></object>
+	<script src="js/choropleth.min.js"></script>
 	<script>
-		var colors	= ["#EDF8E9","#BAE4B3","#74C476","#238B45"],
-			map		= 'map-municipios';
+		var colores	= ["#EDF8E9","#BAE4B3","#74C476","#238B45"],
+			map		= 'mapa';
 			mpios	= {
 				nvo_laredo:		43,
 				guerrero:		70,
@@ -66,7 +66,7 @@
 				aldama:			09
 			};
 
-		choropleth.do('map-municipios', mpios, colors);
+		choropleth.do(map, mpios, colores);
 
 	</script>
 </body>
