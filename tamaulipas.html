@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+	<meta charset="utf-8">
+	<title>Tamaulipas / Choropleth</title>
+</head>
+<style>
+	html,body{ margin:0; padding:0;}
+	#map-municipios { 
+		margin:	20px;
+		padding: 15px;
+		width:	260px;
+		height:	500px;
+		border:	1px dashed #ccc;
+	}
+</style>
+<body>
+	<object data="svg/municipios.svg" id="map-municipios" type="image/svg+xml"></object>
+	<script src="js/choropleth.min.js"></script>
+	<script>
+		var mpios	= {
+			nvo_laredo:		43,
+			guerrero:		70,
+			mier:			11,
+			m_aleman:		63,
+			camargo:		82,
+			g_diaz_ordaz:	27,
+			reynosa:		68,
+			rio_bravo:		23,
+			v_hermoso:		43,
+			mendez:			24,
+			burgos:			33,
+			cruillas:		22,
+			s_carlos:		31,
+			s_nicolas:		68,
+			villagran:		03,
+			mainero:		93,
+			hidalgo:		80,
+			jimenez:		23,
+			abasolo:		11,
+			padilla:		12,
+			guemez:			38,
+			victoria:		08,
+			casas:			49,
+			jaumave:		83,
+			miquihuana:		20,
+			bustamante:		02,
+			palmillas:		11,
+			tula:			21,
+			ocampo:			83,
+			llera:			18,
+			g_farias:		22,
+			xicotencatl:	34,
+			gonzalez:		43,
+			mante:			52,
+			a_morelos:		60,
+			n_morelos:		60,
+			altamira:		71,
+			tampico:		83,
+			c_madero:		96,
+			matamoros:		97,
+			s_fernando:		88,
+			s_marina:		49,
+			aldama:			09
+		}
+
+		var readyStateCheckInterval = setInterval(function() {
+			if (document.readyState === "complete") {
+				choropleth('map-municipios', mpios);
+				clearInterval(readyStateCheckInterval);
+			}
+		}, 10);
+
+	</script>
+</body>
+</html>
